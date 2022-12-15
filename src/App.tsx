@@ -1,26 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Card from './components/Card';
+import ThemeToggler from './components/ThemeToggler';
+import useAdvice from './hooks/useAdvice';
 
-function App() {
+const App = () => {
+  const { advice, fetchAdvice, isLoading } = useAdvice();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container bg-gradient-to-br from-white to-gray-100 dark:from-gray-900 dark:to-gray-800 min-h-screen min-w-full flex items-center justify-center">
+      <Card advice={advice} isLoading={isLoading} handleClick={fetchAdvice} />
+      <ThemeToggler />
     </div>
   );
-}
+};
 
 export default App;
