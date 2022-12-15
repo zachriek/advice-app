@@ -1,6 +1,5 @@
-import Card from './components/Card';
-import ThemeToggler from './components/ThemeToggler';
-import useAdvice from './hooks/useAdvice';
+import { Card, ThemeToggler } from './components';
+import { useAdvice } from './hooks';
 
 const App = () => {
   const { advice, fetchAdvice, isLoading } = useAdvice();
