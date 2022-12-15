@@ -20,7 +20,7 @@ const useAdvice = () => {
 
   useEffect(() => {
     fetchAdvice();
-  }, [advice]);
+  }, []);
 
   return { advice, fetchAdvice, isLoading };
 };
